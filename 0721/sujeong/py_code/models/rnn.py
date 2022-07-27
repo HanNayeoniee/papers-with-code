@@ -7,7 +7,7 @@ class RNNClassification(nn.Module):
         self, 
         vocab_size, 
         emb_size, 
-        hidden_size, 
+        hidden_size=128, 
         num_layers=4):
 
         super(RNNClassification, self).__init__()
@@ -38,4 +38,5 @@ class RNNClassification(nn.Module):
         y = torch.stack([y[i,l-1, :] for i,l in zip(range(len(y)),lens)], dim=0)
         y = self.sigmoid(self.fc(y))
         return y
+
 

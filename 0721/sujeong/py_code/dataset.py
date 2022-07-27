@@ -24,7 +24,7 @@ class Vocab():
     def __init__(self, tokenizer=Mecab, do_preprocess=True) -> None:
         self.tokenizer = tokenizer
         
-        data_path = "./data/ratings_train.txt" 
+        data_path = "../nsmc/ratings_train.txt" 
         train_f = open(data_path, 'r', encoding="utf-8")
         lines = train_f.readlines()
         
@@ -38,12 +38,13 @@ class Vocab():
             # preprocessing
             label = label[0]
             sentence = self._preprocess(sentence, do_preprocess)
+            if len(sentence)>=0:
+                self.train_corpus.append(sentence)
+                self.train_labels.append(int(label))
 
-            self.train_corpus.append(sentence)
-            self.train_labels.append(int(label))
 
         self.test_corpus, self.test_labels = [], []
-        test_data_path = "./data/ratings_test.txt" 
+        test_data_path = "../nsmc/ratings_test.txt" 
         test_f = open(test_data_path, 'r', encoding="utf-8")
         lines = test_f.readlines()
         for i in tqdm(range(len(lines)), desc="get_test_data"):
@@ -54,8 +55,9 @@ class Vocab():
             # preprocessing
             label = label[0]
             sentence = self._preprocess(sentence, do_preprocess)
-            self.test_corpus.append(sentence)
-            self.test_labels.append(int(label))
+            if len(sentence)>=0:
+                self.test_corpus.append(sentence)
+                self.test_labels.append(int(label))
         
         # test corpus도 포함해서 Vocab을 구성하는 게 맞겠죠?
         self.train_corpus = list(map(self._tokenize_sent,self.train_corpus))
@@ -123,12 +125,6 @@ class NSMCDataset(Dataset):
         UNK_TOKEN_ID = 1
         token_ids = torch.tensor([token2id.get(token, UNK_TOKEN_ID) for token in sentence])
         return token_ids
-
-    def one_hot_encoding(self, tok_sent):
-        #print(len(tok_sent))
-        one_hot = to_categorical(tok_sent)
-        return one_hot
-        
 
 
 
