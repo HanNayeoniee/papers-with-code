@@ -25,11 +25,18 @@ PyTorch 기초부터 NLP 근본 딥러닝 모델의 논문 구현 스터디를 �
 - 논문 내용과 구현체에서 달라진 부분
 
 ### 참여자
-> 이인서, 임수정, 한나연, 허치영
+> 이인서, 임수정, 한나연, 허치영, 김소연
 
 
 
-| Date | Paper | Year | Presenter | Review | Code |
-|-------|-------|-------|-------|-------|-------|
-| 7/13 | [ResNet](https://arxiv.org/abs/1512.03385?context=cs) | 2015 | 인서, 나연 |   |   |
-| 7/20 | RNN, LSTM |  | 수정, 치영 |  |   |
+| Date | Paper | Year | Presenter | Source |
+|-------|-------|-------|-------|-------|
+| 7/13 | [Deep Residual Learning for Image Recognition](https://arxiv.org/abs/1512.03385?context=cs) | 2015 | 인서, 나연 | [ResNet](https://github.com/HanNayeoniee/papers-with-code/tree/main/0713_cnn) |
+| 7/20 | RNN, LSTM |  | 수정, 치영 | [RNN](https://github.com/HanNayeoniee/papers-with-code/tree/main/0721_rnn) |
+| 7/27 | [Sequence to Sequence Learning with Neural Networks](https://arxiv.org/abs/1409.3215) | 2014 | 인서, 나연 | [Seq2Seq](https://github.com/HanNayeoniee/papers-with-code/tree/main/0727_seq2seq) |
+| 8/3 | [Neural Machine Translation by Jointly Learning to Align and Translate](https://arxiv.org/abs/1409.0473?context=stat) | ICLR 2015 | 수정, 치영 | [Seq2Seq with Attention](https://github.com/HanNayeoniee/papers-with-code/tree/main/0803_attention) |
+| 8/10 | [Attention Is All You Need](https://arxiv.org/abs/1706.03762?context=cs) | NIPS 2017 | 모두 | [Transformer 리뷰]() |
+| 8/17 | [Attention Is All You Need](https://arxiv.org/abs/1706.03762?context=cs) | NIPS 2017 | 인서, 나연 | [Transformer 코드]() |
+| 8/24 | [Attention Is All You Need](https://arxiv.org/abs/1706.03762?context=cs) | NIPS 2017 | 수정, 소연 | [Transformer 코드]() |
+| 8/31 | [Pre-training of Deep Bidirectional Transformers for Language Understanding](https://arxiv.org/abs/1810.04805) | 2018 | 예정 | [BERT 리뷰]() |
+| 9/9 | [Pre-training of Deep Bidirectional Transformers for Language Understanding](https://arxiv.org/abs/1810.04805) | 2018 | 예정 | [BERT 코드]() |
